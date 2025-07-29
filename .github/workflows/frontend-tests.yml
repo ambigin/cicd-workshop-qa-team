@@ -1,16 +1,16 @@
 name: Frontend Tests
-
 on:
   push:
     branches: [ team1-bigin ]
 
+
 jobs:
   test:
     runs-on: ubuntu-latest
-
-steps:
+    
+    steps:
     - uses: actions/checkout@v4
-
+    
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -20,20 +20,15 @@ steps:
     - name: Install dependencies
       working-directory: ./frontend
       run: npm install
-    
+
     - name: Run all tests with coverage
       working-directory: ./frontend
       run: npm test
     
-    # Optional: Run only unit tests
     # - name: Run unit tests
     #   working-directory: ./frontend
     #   run: npm run test:unit
     
-    # Optional: Run only integration tests
     # - name: Run integration tests
     #   working-directory: ./frontend
     #   run: npm run test:integration
-
-
-
