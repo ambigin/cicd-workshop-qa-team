@@ -17,3 +17,4 @@ aws ssm send-command \
     --targets "[{\"Key\":\"InstanceIds\",\"Values\":[\"$EC2_INSTANCE_ID\"]}]" \
     --parameters "{\"commands\":[\"sudo su - root -c '/root/deployment/deployment_script_team1-bigin.sh'\"]}" \
     --region "$AWS_REGION"
+    
